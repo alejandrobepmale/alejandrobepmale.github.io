@@ -5,6 +5,13 @@ nav_order: 1
 permalink: /
 ---
 
+<style>
+  /* Inyección de CSS para limpiar la página de presentación */
+  .side-bar { display: none !important; }
+  .main { margin-left: 0 !important; max-width: 100% !important; padding: 2rem !important; }
+  .main-header { display: none !important; }
+</style>
+
 # ¡Hola! Soy Alejandro Bepmale
 ## Consultor TI & Especialista en Infraestructura y Automatización
 
