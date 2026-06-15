@@ -6,82 +6,127 @@ permalink: /
 ---
 
 <style>
-  /* Inyección de CSS para limpiar la página de presentación */
-  .side-bar { display: none !important; }
-  .main { margin-left: 0 !important; max-width: 100% !important; padding: 2rem !important; }
-  .main-header { display: none !important; }
+  /* ==========================================
+     RESET & DISEÑO GLOBAL DE LA LANDING
+     ========================================== */
+  .side-bar, .main-header, .site-header, .site-footer { display: none !important; }
+  .main { margin-left: 0 !important; max-width: 100% !important; padding: 0 !important; background-color: #0d1117 !important; color: #c9d1d9 !important; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+  
+  /* Variables de Color para fácil edición */
+  :root {
+    --bg-primary: #0d1117;
+    --bg-secondary: #161b22;
+    --accent-purple: #8957e5;
+    --accent-blue: #1f6feb;
+    --accent-green: #238636;
+    --text-main: #f0f6fc;
+    --text-muted: #8b949e;
+    --border-color: #30363d;
+  }
+
+  /* ==========================================
+     NAVBAR SUPERIOR
+     ========================================== */
+  .ln-navbar {
+    background-color: rgba(22, 27, 34, 0.95);
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.2rem 10%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid var(--border-color);
+  }
+  .ln-brand {
+    color: var(--text-main) !important;
+    font-weight: 700;
+    font-size: 1.4rem;
+    text-decoration: none;
+    letter-spacing: -0.5px;
+  }
+  .ln-brand span { color: var(--accent-purple); }
+  .ln-nav-links { display: flex; gap: 2.5rem; list-style: none; margin: 0; padding: 0; }
+  .ln-nav-links a { color: var(--text-muted) !important; text-decoration: none; font-weight: 500; font-size: 0.95rem; transition: color 0.2s ease; }
+  .ln-nav-links a:hover { color: var(--text-main) !important; }
+
+  /* ==========================================
+     HERO SECTION
+     ========================================== */
+  .ln-hero {
+    padding: 7rem 10% 6rem 10%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    background: radial-gradient(circle at 90% 10%, rgba(137, 87, 229, 0.08) 0%, transparent 40%),
+                radial-gradient(circle at 10% 90%, rgba(31, 111, 235, 0.05) 0%, transparent 50%);
+    border-bottom: 1px solid var(--border-color);
+  }
+  .ln-hero-tag {
+    background-color: rgba(137, 87, 229, 0.15);
+    color: #d2a8ff;
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    border: 1px solid rgba(137, 87, 229, 0.3);
+  }
+  .ln-hero h1 {
+    font-size: 3.2rem;
+    font-weight: 800;
+    color: var(--text-main);
+    line-height: 1.15;
+    margin: 0 0 1rem 0;
+    letter-spacing: -1px;
+  }
+  .ln-hero h2 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #58a6ff;
+    margin: 0 0 1.5rem 0;
+  }
+  .ln-hero p {
+    font-size: 1.15rem;
+    line-height: 1.6;
+    color: var(--text-muted);
+    max-width: 750px;
+    margin: 0 0 2.5rem 0;
+  }
+  .ln-hero-buttons { display: flex; gap: 1rem; flex-wrap: wrap; }
+  .btn-ln {
+    padding: 0.8rem 1.8rem;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-decoration: none;
+    transition: transform 0.2s ease, filter 0.2s ease;
+  }
+  .btn-ln:hover { transform: translateY(-2px); filter: brightness(1.1); }
+  .btn-purple { background-color: var(--accent-purple); color: #fff !important; }
+  .btn-outline { border: 1px solid var(--border-color); color: var(--text-main) !important; background-color: transparent; }
 </style>
 
-# ¡Hola! Soy Alejandro Bepmale
-## Consultor TI & Especialista en Infraestructura y Automatización
+<nav class="ln-navbar">
+  <a href="/" class="ln-brand">alejandro<span>bepmale</span></a>
+  <ul class="ln-nav-links">
+    <li><a href="/">Inicio</a></li>
+    <li><a href="/infraestructura">Infraestructura</a></li>
+    <li><a href="/ciberseguridad">Ciberseguridad</a></li>
+    <li><a href="#contacto">Contacto</a></li>
+  </ul>
+</nav>
 
-Profesional técnico enfocado en diseñar e implementar soluciones robustas de infraestructura, seguridad informática y automatización de procesos. A través de Insertbog, opero bajo un modelo de aliado digital para conectar el desarrollo web de alto valor con ecosistemas estables de contenedores y servidores, resolviendo problemas complejos de continuidad operativa y rendimiento.
-
-<p align="center">
-  <a href="#tecnologias" style="padding: 10px 20px; background-color: #6f42c1; color: white; text-decoration: none; border-radius: 5px; margin-right: 10px;">🛠️ Tecnologías</a>
-  <a href="#portafolio" style="padding: 10px 20px; background-color: #007bff; color: white; text-decoration: none; border-radius: 5px; margin-right: 10px;">📂 Ver Proyectos</a>
-  <a href="#contacto" style="padding: 10px 20px; background-color: #28a745; color: white; text-decoration: none; border-radius: 5px;">📧 Contáctame</a>
-</p>
-
----
-
-## 🚀 Tecnologías y Herramientas
-
-### 🏗️ Infraestructura y Virtualización
-🌐 ![VMware ESXi](https://img.shields.io/badge/VMware_ESXi-6151B1?style=for-the-badge&logo=vmware&logoColor=white)
-🖥️ ![Citrix LTSR](https://img.shields.io/badge/Citrix_LTSR-00A4E4?style=for-the-badge&logo=citrix&logoColor=white)
-⚙️ ![cPanel / WHM](https://img.shields.io/badge/cPanel_/_WHM-FF6C2C?style=for-the-badge&logo=cpanel&logoColor=white)
-🐧 ![Ubuntu Server](https://img.shields.io/badge/Ubuntu_Server-E95420?style=for-the-badge&logo=ubuntu&logoColor=white)
-🪟 ![Windows Server](https://img.shields.io/badge/Windows_Server-0078D6?style=for-the-badge&logo=windows&logoColor=white)
-
-### 🤖 Automatización y Contenedores
-🐋 ![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
-⚡ ![Make.com](https://img.shields.io/badge/Make.com-010101?style=for-the-badge&logo=make&logoColor=white)
-💬 ![WAHA API](https://img.shields.io/badge/WAHA_WhatsApp_API-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)
-
-### 💻 Desarrollo Web & CMS
-🌐 ![WordPress](https://img.shields.io/badge/WordPress-21759B?style=for-the-badge&logo=wordpress&logoColor=white)
-🎨 ![Elementor](https://img.shields.io/badge/Elementor-92003B?style=for-the-badge&logo=elementor&logoColor=white)
-
-### 📜 Lenguajes de Programación y Scripting
-🟦 ![PowerShell](https://img.shields.io/badge/PowerShell-5391FE?style=for-the-badge&logo=powershell&logoColor=white)
-🟩 ![Bash Scripting](https://img.shields.io/badge/Bash_Scripting-4EAA25?style=for-the-badge&logo=gnu-bash&logoColor=white)
-🟨 ![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
-🛢️ ![SQL Server](https://img.shields.io/badge/SQL_Server-CC2927?style=for-the-badge&logo=microsoft-sql-server&logoColor=white)
-💙 ![Flutter / Dart](https://img.shields.io/badge/Flutter_/_Dart-02569B?style=for-the-badge&logo=flutter&logoColor=white)
-
-### 🛡️ Monitoreo y Ciberseguridad
-📊 ![Zabbix](https://img.shields.io/badge/Zabbix-CC292F?style=for-the-badge&logo=zabbix&logoColor=white)
-🐉 ![Kali Linux](https://img.shields.io/badge/Kali_Linux-557C94?style=for-the-badge&logo=kali-linux&logoColor=white)
-🔍 ![Shodan](https://img.shields.io/badge/Shodan_Intel-212121?style=for-the-badge&logo=shodan&logoColor=white)
-
----
-
-## 🛠️ Servicios
-* **Automatización de Procesos:** Construcción de ecosistemas eficientes conectando APIs y plataformas mediante herramientas de integración masiva como Make.com y automatización de comunicaciones empresariales con WAHA.
-* **Gestión de Infraestructura y Virtualización:** Despliegue, migración y administración de entornos virtualizados sobre VMware ESXi y entornos críticos como Citrix LTSR, junto con la configuración avanzada de servidores basados en Ubuntu.
-* **Monitoreo y Continuidad Operativa:** Implementación de servidores de monitoreo proactivo para la detección temprana de anomalías en la red y ejecución de políticas de respaldo para asegurar la integridad de bases de datos de entornos corporativos.
-
----
-
-## 📂 Portafolio
-Aquí destaco mis proyectos más relevantes:
-
-| Proyecto | Descripción | Tecnologías |
-| :--- | :--- | :--- |
-| [Robocopy Backup Automation Suite](#) | Motor de sincronización resiliente diseñado para la migración exitosa de más de 30 TB de datos críticos desde entornos NAS hacia discos mecánicos degradados físicamente. | PowerShell, Robocopy, TEE |
-| [Ecosistema Integrado Insertbog](#) | Implementación de soluciones de desarrollo web y automatización a medida enfocadas en optimizar flujos operativos y de mensajería para empresas. | Docker, Make.com, WAHA, WordPress |
-| [Monitoreo Proactivo de Redes](#) | Despliegue de un servidor centralizado en entornos virtuales para lograr visibilidad completa de infraestructura y resolver incidencias complejas de conectividad. | Zabbix, Ubuntu, VMware ESXi, Netplan, TCPdump |
-
----
-
-## 📧 Contacto
-¿Tienes algún proyecto en mente o necesitas ayuda técnica? ¡Hablemos!
-
-* **Email:** contacto@alejandrobepmale.com
-* **Sitio Web:** [alejandrobepmale.com](https://alejandrobepmale.com)
-* **LinkedIn:** [Alejandro Bepmale](https://www.linkedin.com/in/alejandrobepmale)
-* **GitHub:** [alejandrobepmale](https://github.com/alejandrobepmale)
-
----
-*Diseñado con pasión para el mundo del desarrollo y la infraestructura.*
+<header class="ln-hero">
+  <span class="ln-hero-tag">Consultoría TI & Integración Eficiente</span>
+  <h1>Tu aliado digital en infraestructura y automatización</h1>
+  <h2>Soluciones robustas para la continuidad de tu negocio</h2>
+  <p>Diseño e implemento ecosistemas estables conectando el desarrollo de software con arquitecturas cloud, virtualización avanzada y flujos de automatización inteligentes. Menos fricción operativa, máxima seguridad.</p>
+  
+  <div class="ln-hero-buttons">
+    <a href="#servicios" class="btn-ln btn-purple">Explorar Servicios</a>
+    <a href="#contacto" class="btn-ln btn-outline">Hablemos Directo</a>
+  </div>
+</header>
