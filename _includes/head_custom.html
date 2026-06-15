@@ -1,8 +1,11 @@
 <style>
   /* ==========================================
-     1. RESET GLOBAL Y VARIABLES PREMIUM
+     1. RESET GLOBAL Y ELIMINACIÓN DE CABECERAS DEL TEMA
      ========================================== */
-  .site-header, .site-footer { display: none !important; }
+  /* Pulverizamos por completo la barra blanca nativa, el buscador del tema y el footer */
+  .main-header, .site-header, .site-footer, .search-placeholder, .search { 
+    display: none !important; 
+  }
   
   .main, .main-content, .main-content-wrap { 
     margin: 0 !important; 
@@ -418,18 +421,42 @@
   .contact-btn-email:hover { background-color: #161b22; border-color: #ea4335; color: #ea4335 !important; transform: translateY(-2px); }
 
   /* ==========================================
-     9. BARRA LATERAL (SIDEBAR) PARA PÁGINAS INTERNAS
+     9. REDISEÑO TOTAL DEL SIDEBAR (MATE, PLANO Y SIN GRADIENTES)
      ========================================== */
   .side-bar {
     background-color: #161b22 !important;
     border-right: 1px solid #30363d !important;
   }
+  
+  /* Destruimos el bloque de gradiente púrpura/blanco de selección por defecto */
+  .nav-list-item.active, .nav-list-item {
+    background: none !important;
+    background-image: none !important;
+  }
+  
   .site-title { color: #f0f6fc !important; font-weight: 700 !important; }
-  .nav-list-link { color: #8b949e !important; }
-  .nav-list-link:hover, .nav-list-link.active { color: #f0f6fc !important; background-color: #21262d !important; }
+  
+  /* Enlaces del sidebar base */
+  .nav-list-link { 
+    color: #8b949e !important; 
+    background: none !important;
+    border-left: 3px solid transparent !important;
+    transition: all 0.2s ease !important;
+  }
+  .nav-list-link:hover {
+    color: #f0f6fc !important;
+    background-color: #21262d !important;
+  }
+  
+  /* Indicador Activo Limpio: Fondo plano oscuro + Fina línea de acento púrpura a la izquierda */
+  .nav-list-link.active, .nav-list-item.active > .nav-list-link {
+    color: #f0f6fc !important;
+    background-color: #21262d !important;
+    border-left: 3px solid var(--accent-purple) !important;
+    font-weight: 600 !important;
+  }
 
   @media (min-width: 64rem) {
-    /* El sidebar por defecto ocupará 290px en las páginas internas */
     .side-bar { width: 290px !important; }
     .main { 
       margin-left: 290px !important; 
