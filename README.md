@@ -59,7 +59,6 @@ permalink: /
   }
   .ln-brand span { color: var(--accent-purple); }
   
-  /* Contenedor plano para evitar herencia de viñetas */
   .ln-nav-links { 
     display: flex !important; 
     gap: 1.8rem !important; 
@@ -76,7 +75,6 @@ permalink: /
   }
   .ln-nav-links a:hover { color: var(--text-main) !important; }
   
-  /* Separador visual para enlaces externos */
   .nav-divider {
     color: var(--border-color);
     font-size: 0.9rem;
@@ -305,11 +303,63 @@ permalink: /
   }
 
   /* ==========================================
+     BLOQUE 5: FILOSOFÍA / SOBRE MÍ (NUEVO)
+     ========================================== */
+  .about-section {
+    padding: 6rem 10%;
+    background-color: var(--bg-primary);
+    border-bottom: 1px solid var(--border-color);
+  }
+  .about-container {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+    flex-wrap: wrap;
+  }
+  .about-content {
+    flex: 1.2;
+    min-width: 320px;
+  }
+  .about-card {
+    flex: 0.8;
+    min-width: 280px;
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 2.5rem;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+  }
+  .about-card h4 {
+    color: #d2a8ff !important;
+    margin: 0 0 1.2rem 0 !important;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 700;
+  }
+  .about-features {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+  .about-item {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: var(--text-muted);
+  }
+  .about-item strong {
+    color: var(--text-main);
+    display: block;
+    font-size: 1rem;
+    margin-bottom: 0.2rem;
+  }
+
+  /* ==========================================
      BLOQUE 6: SECCIÓN DE CONTACTO
      ========================================== */
   .contact-section {
     padding: 6rem 10%;
-    background-color: var(--bg-primary);
+    background-color: var(--bg-secondary);
     text-align: center;
   }
   .contact-grid {
@@ -330,7 +380,7 @@ permalink: /
     font-size: 0.95rem;
     border: 1px solid var(--border-color);
     color: var(--text-main) !important;
-    background-color: var(--bg-secondary);
+    background-color: var(--bg-primary);
     transition: background-color 0.2s, border-color 0.2s;
   }
   .contact-btn:hover {
@@ -339,7 +389,7 @@ permalink: /
   }
 </style>
 
-<!-- Barra de Navegación Premium Corregida -->
+<!-- Barra de Navegación Premium -->
 <nav class="ln-navbar">
   <a href="/" class="ln-brand">alejandro<span>bepmale</span></a>
   <div class="ln-nav-links">
@@ -450,6 +500,35 @@ permalink: /
         <img src="https://img.shields.io/badge/Zabbix-CC292F?style=flat-square&logo=zabbix&logoColor=white" alt="Zabbix">
         <img src="https://img.shields.io/badge/Kali_Linux-557C94?style=flat-square&logo=kali-linux&logoColor=white" alt="Kali Linux">
         <img src="https://img.shields.io/badge/Shodan-212121?style=flat-square&logo=shodan&logoColor=white" alt="Shodan">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Bloque 5: Filosofía de Trabajo / Tu Aliado Digital -->
+<section class="about-section">
+  <div class="about-container">
+    <div class="about-content">
+      <h2 class="section-title">De Humano a Humano: Tu Aliado Digital</h2>
+      <p class="section-subtitle" style="margin-bottom: 1.5rem !important;">Por qué trabajar con un consultor dedicado marca la diferencia.</p>
+      <p>Detrás de cada gran infraestructura o automatización exitosa hay decisiones estratégicas que no se resuelven con un sistema automatizado de tickets cerrados al azar. A través de <strong>Insertbog</strong>, opero bajo una estructura de asociación directa, convirtiéndome en un verdadero aliado tecnológico para tu negocio.</p>
+      <p>Mi objetivo no es venderte horas de soporte reactivo, sino diseñar e integrar ecosistemas robustos de alto valor que prevengan las caídas de servicio, agilicen tus flujos operativos diarios y protejan tus activos digitales de extremo a extremo.</p>
+    </div>
+    <div class="about-card">
+      <h4>El Enfoque de Trabajo</h4>
+      <div class="about-features">
+        <div class="about-item">
+          <strong>Asociación Directa</strong>
+          Sin intermediarios corporativos ni burocracia comercial. Comunicación técnica fluida de un profesional a otro.
+        </div>
+        <div class="about-item">
+          <strong>Soluciones de Alto Valor</strong>
+          Foco absoluto en la estabilidad del entorno, la seguridad de la red y la automatización inteligente de procesos.
+        </div>
+        <div class="about-item">
+          <strong>Criterio de Continuidad</strong>
+          Sistemas preparados para contingencias reales, respaldos consistentes y monitoreo proactivo constante.
+        </div>
       </div>
     </div>
   </div>
