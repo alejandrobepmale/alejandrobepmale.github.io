@@ -9,7 +9,6 @@ permalink: /
   /* ==========================================
      RESET AGRESIVO PARA ELIMINAR MÁRGENES DEL TEMA
      ========================================== */
-  /* Forzamos a los contenedores ocultos de Jekyll a ocupar el 100% sin paddings ni márgenes */
   .side-bar, .main-header, .site-header, .site-footer { display: none !important; }
   
   .main, .main-content, .main-content-wrap { 
@@ -20,13 +19,11 @@ permalink: /
     background-color: #0d1117 !important; 
   }
   
-  /* Reset global de tipografía */
   .main-content {
     color: #c9d1d9 !important; 
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif !important;
   }
   
-  /* Variables de Color Premium */
   :root {
     --bg-primary: #0d1117;
     --bg-secondary: #161b22;
@@ -39,7 +36,7 @@ permalink: /
   }
 
   /* ==========================================
-     NAVBAR SUPERIOR (CORREGIDO SIN PUNTOS)
+     NAVBAR SUPERIOR
      ========================================== */
   .ln-navbar {
     background-color: rgba(22, 27, 34, 0.95);
@@ -62,7 +59,6 @@ permalink: /
   }
   .ln-brand span { color: var(--accent-purple); }
   
-  /* Forzamos la eliminación absoluta de viñetas/puntos */
   .ln-nav-links { 
     display: flex !important; 
     gap: 2.5rem !important; 
@@ -195,6 +191,76 @@ permalink: /
     color: var(--text-muted);
     margin: 0 !important;
   }
+
+  /* ==========================================
+     BLOQUE 3: BANNER DE IMPACTO / CASO DE ÉXITO
+     ========================================== */
+  .impact-section {
+    padding: 6rem 10%;
+    background-color: var(--bg-primary);
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+    flex-wrap: wrap;
+  }
+  .impact-metric {
+    flex: 1;
+    min-width: 280px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: radial-gradient(circle at center, rgba(31, 111, 235, 0.1) 0%, transparent 70%);
+    border: 1px solid rgba(56, 139, 253, 0.2);
+    border-radius: 12px;
+    padding: 3.5rem 2rem;
+    text-align: center;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  }
+  .impact-number {
+    font-size: 4.5rem;
+    font-weight: 800;
+    color: #58a6ff;
+    line-height: 1;
+    margin-bottom: 0.5rem;
+    letter-spacing: -1px;
+  }
+  .impact-label {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--text-main);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+  .impact-content {
+    flex: 2;
+    min-width: 320px;
+  }
+  .impact-badge {
+    background-color: rgba(56, 139, 253, 0.15);
+    color: #58a6ff;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-bottom: 1.2rem;
+    display: inline-block;
+    border: 1px solid rgba(56, 139, 253, 0.2);
+  }
+  .impact-content h2 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--text-main) !important;
+    margin: 0 0 1.2rem 0 !important;
+    line-height: 1.2;
+  }
+  .impact-content p {
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: var(--text-muted);
+    margin-bottom: 1.8rem !important;
+  }
 </style>
 
 <!-- Barra de Navegación Premium -->
@@ -227,25 +293,36 @@ permalink: /
   <p class="section-subtitle">Soluciones diseñadas para optimizar operaciones, mitigar riesgos y asegurar la escalabilidad tecnológica.</p>
   
   <div class="services-grid">
-    <!-- Tarjeta 1 -->
     <div class="service-card">
       <span class="service-icon">🤖</span>
       <h3>Automatización de Procesos</h3>
       <p>Construcción de ecosistemas altamente eficientes mediante la integración de APIs con Make.com y el despliegue de pasarelas de comunicación automatizada utilizando WAHA para optimizar flujos críticos de negocio.</p>
     </div>
     
-    <!-- Tarjeta 2 -->
     <div class="service-card">
       <span class="service-icon">🏗️</span>
       <h3>Gestión de Infraestructura</h3>
       <p>Despliegue, migración y mantenimiento de arquitecturas virtuales sobre VMware ESXi, entornos corporativos complejos basados en Citrix LTSR y configuraciones avanzadas en servidores de producción Linux/Ubuntu.</p>
     </div>
     
-    <!-- Tarjeta 3 -->
     <div class="service-card">
       <span class="service-icon">🛡️</span>
       <h3>Monitoreo y Continuidad operativa</h3>
       <p>Implementación desde cero de servidores de monitoreo (Zabbix) para visibilidad total de red. Diseño de políticas robustas de respaldo de bases de datos para garantizar la integridad ante contingencias críticas.</p>
     </div>
+  </div>
+</section>
+
+<!-- Bloque 3: Banner de Impacto / Caso de Éxito -->
+<section class="impact-section">
+  <div class="impact-metric">
+    <span class="impact-number">+30 TB</span>
+    <span class="impact-label">Datos Migrados</span>
+  </div>
+  <div class="impact-content">
+    <span class="impact-badge">Caso de Éxito: Infraestructura Resiliente</span>
+    <h2>Migración crítica de datos masivos sobre hardware degradado</h2>
+    <p>Diseño e implementación de un motor de automatización bajo demanda mediante scripts avanzados para la sincronización de grandes volúmenes de información corporativa. Ante la inestabilidad de la red y fallas de hardware físico de dispositivos de almacenamiento tradicionales, se estructuró una solución de bajo nivel con tolerancia a fallas capaz de gestionar reintentos automáticos, mitigar el estrés de lectura/escritura y garantizar la integridad total de la data sin interrupciones operativas.</p>
+    <a href="/infraestructura" class="btn-ln btn-outline">Ver Detalles Técnicos</a>
   </div>
 </section>
