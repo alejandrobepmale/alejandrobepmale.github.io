@@ -36,7 +36,7 @@ permalink: /
   }
 
   /* ==========================================
-     NAVBAR SUPERIOR (ESTRUCTURA DE BLOQUE SIN PUNTOS)
+     NAVBAR SUPERIOR (MÍNIMO E ICONOGRÁFICO)
      ========================================== */
   .ln-navbar {
     background-color: rgba(22, 27, 34, 0.95);
@@ -61,7 +61,7 @@ permalink: /
   
   .ln-nav-links { 
     display: flex !important; 
-    gap: 1.8rem !important; 
+    gap: 1.6rem !important; 
     margin: 0 !important; 
     padding: 0 !important; 
     align-items: center;
@@ -79,7 +79,22 @@ permalink: /
     color: var(--border-color);
     font-size: 0.9rem;
     user-select: none;
+    margin: 0 0.2rem;
   }
+
+  /* Estilos para íconos del nav con colores de marca en hover */
+  .nav-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-muted) !important;
+    transition: color 0.2s ease, transform 0.2s ease;
+  }
+  .nav-icon svg { width: 18px; height: 18px; }
+  .nav-icon:hover { transform: scale(1.1); }
+  .nav-linkedin:hover { color: #0077b5 !important; }
+  .nav-upwork:hover { color: #14a800 !important; }
+  .nav-workana:hover { color: #00bcd4 !important; }
 
   /* ==========================================
      HERO SECTION
@@ -303,7 +318,7 @@ permalink: /
   }
 
   /* ==========================================
-     BLOQUE 5: FILOSOFÍA / SOBRE MÍ (NUEVO)
+     BLOQUE 5: FILOSOFÍA DE TRABAJO
      ========================================== */
   .about-section {
     padding: 6rem 10%;
@@ -355,38 +370,48 @@ permalink: /
   }
 
   /* ==========================================
-     BLOQUE 6: SECCIÓN DE CONTACTO
+     BLOQUE 6: GRID DE CONTACTO ICONOGRÁFICO PREMIUM
      ========================================== */
   .contact-section {
     padding: 6rem 10%;
     background-color: var(--bg-secondary);
     text-align: center;
   }
-  .contact-grid {
+  .contact-icons-grid {
     display: flex;
     justify-content: center;
-    gap: 1.5rem;
+    gap: 1.8rem;
     flex-wrap: wrap;
-    margin-top: 2.5rem;
+    margin-top: 3.5rem;
   }
-  .contact-btn {
-    display: inline-flex;
+  .contact-icon-card {
+    display: flex;
     align-items: center;
-    gap: 0.5rem;
-    padding: 0.8rem 1.5rem;
-    border-radius: 6px;
-    font-weight: 600;
-    text-decoration: none;
-    font-size: 0.95rem;
+    justify-content: center;
+    width: 65px;
+    height: 65px;
+    border-radius: 10px;
     border: 1px solid var(--border-color);
-    color: var(--text-main) !important;
     background-color: var(--bg-primary);
-    transition: background-color 0.2s, border-color 0.2s;
+    color: var(--text-muted) !important;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   }
-  .contact-btn:hover {
-    background-color: #21262d;
-    border-color: #8b949e;
+  .contact-icon-card svg {
+    width: 26px;
+    height: 26px;
   }
+  .contact-icon-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+  }
+  
+  /* Colores dinámicos específicos para cada red en hover */
+  .card-email:hover { border-color: #ea4335; color: #ea4335 !important; }
+  .card-linkedin:hover { border-color: #0077b5; color: #0077b5 !important; }
+  .card-upwork:hover { border-color: #14a800; color: #14a800 !important; }
+  .card-workana:hover { border-color: #00bcd4; color: #00bcd4 !important; }
+  .card-github:hover { border-color: #8957e5; color: #8957e5 !important; }
 </style>
 
 <!-- Barra de Navegación Premium -->
@@ -398,9 +423,18 @@ permalink: /
     <a href="/ciberseguridad">Ciberseguridad</a>
     <a href="#contacto">Contacto</a>
     <span class="nav-divider">|</span>
-    <a href="https://www.linkedin.com/in/alejandrobepmale" target="_blank">LinkedIn</a>
-    <a href="https://www.upwork.com" target="_blank">Upwork</a>
-    <a href="https://www.workana.com" target="_blank">Workana</a>
+    <!-- LinkedIn -->
+    <a href="https://www.linkedin.com/in/alejandrobepmale" target="_blank" class="nav-icon nav-linkedin" title="LinkedIn">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+    </a>
+    <!-- Upwork -->
+    <a href="https://www.upwork.com" target="_blank" class="nav-icon nav-upwork" title="Upwork">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.35 5.63c-2.31 0-4.14 1.56-4.82 3.82l-.17.62-.57-2.38C11.12 4.96 8.79 3 6.14 3 2.75 3 0 5.75 0 9.14v5.73h2.72V9.14c0-1.88 1.53-3.42 3.42-3.42 1.67 0 3.09 1.2 3.38 2.84l.91 3.81H7.71v2.72h5.44l.21.87c.59 2.46 2.5 3.99 5.01 3.99 3.47 0 6.29-2.82 6.29-6.29 0-3.47-2.82-6.29-6.29-6.29zm1 9.87c-1.39 0-2.38-.81-2.73-2.12l-.31-1.26c.55-1.48 1.68-2.45 3.04-2.45 1.97 0 3.57 1.6 3.57 3.57 0 1.97-1.6 3.57-3.57 3.57z"/></svg>
+    </a>
+    <!-- Workana -->
+    <a href="https://www.workana.com" target="_blank" class="nav-icon nav-workana" title="Workana">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1.12 14.28L8.12 9.44h1.9l1.43 4.5 1.41-4.5h1.9l-2.76 6.84h-1.12z"/></svg>
+    </a>
   </div>
 </nav>
 
@@ -534,16 +568,31 @@ permalink: /
   </div>
 </section>
 
-<!-- Bloque 6: Sección de Contacto -->
+<!-- Bloque 6: Sección de Contacto Iconográfica Premium -->
 <section id="contacto" class="contact-section">
   <h2 class="section-title">¿Hablamos de tu próximo proyecto?</h2>
-  <p class="section-subtitle">Ya sea para integraciones complejas, auditorías de seguridad o estabilidad de infraestructura, escríbeme directamente.</p>
+  <p class="section-subtitle">Ya sea para integraciones complejas, auditorías de seguridad o estabilidad de infraestructura, conéctame por cualquiera de mis canales oficiales.</p>
   
-  <div class="contact-grid">
-    <a href="mailto:contacto@alejandrobepmale.com" class="contact-btn">✉️ contacto@alejandrobepmale.com</a>
-    <a href="https://www.linkedin.com/in/alejandrobepmale" target="_blank" class="contact-btn">🔗 LinkedIn</a>
-    <a href="https://www.upwork.com" target="_blank" class="contact-btn">🚀 Upwork Profile</a>
-    <a href="https://www.workana.com" target="_blank" class="contact-btn">💼 Workana Profile</a>
-    <a href="https://github.com/alejandrobepmale" target="_blank" class="contact-btn">🐙 GitHub</a>
+  <div class="contact-icons-grid">
+    <!-- Email -->
+    <a href="mailto:contacto@alejandrobepmale.com" class="contact-icon-card card-email" title="Enviar un Correo Electrónico">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+    </a>
+    <!-- LinkedIn -->
+    <a href="https://www.linkedin.com/in/alejandrobepmale" target="_blank" class="contact-icon-card card-linkedin" title="Ver Perfil de LinkedIn">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+    </a>
+    <!-- Upwork -->
+    <a href="https://www.upwork.com" target="_blank" class="contact-icon-card card-upwork" title="Ver Perfil de Upwork">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.35 5.63c-2.31 0-4.14 1.56-4.82 3.82l-.17.62-.57-2.38C11.12 4.96 8.79 3 6.14 3 2.75 3 0 5.75 0 9.14v5.73h2.72V9.14c0-1.88 1.53-3.42 3.42-3.42 1.67 0 3.09 1.2 3.38 2.84l.91 3.81H7.71v2.72h5.44l.21.87c.59 2.46 2.5 3.99 5.01 3.99 3.47 0 6.29-2.82 6.29-6.29 0-3.47-2.82-6.29-6.29-6.29zm1 9.87c-1.39 0-2.38-.81-2.73-2.12l-.31-1.26c.55-1.48 1.68-2.45 3.04-2.45 1.97 0 3.57 1.6 3.57 3.57 0 1.97-1.6 3.57-3.57 3.57z"/></svg>
+    </a>
+    <!-- Workana -->
+    <a href="https://www.workana.com" target="_blank" class="contact-icon-card card-workana" title="Ver Perfil de Workana">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1.12 14.28L8.12 9.44h1.9l1.43 4.5 1.41-4.5h1.9l-2.76 6.84h-1.12z"/></svg>
+    </a>
+    <!-- GitHub -->
+    <a href="https://github.com/alejandrobepmale" target="_blank" class="contact-icon-card card-github" title="Ver Repositorios en GitHub">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+    </a>
   </div>
 </section>
