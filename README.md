@@ -36,7 +36,7 @@ permalink: /
   }
 
   /* ==========================================
-     NAVBAR SUPERIOR
+     NAVBAR SUPERIOR (ESTRUCTURA DE BLOQUE SIN PUNTOS)
      ========================================== */
   .ln-navbar {
     background-color: rgba(22, 27, 34, 0.95);
@@ -59,19 +59,13 @@ permalink: /
   }
   .ln-brand span { color: var(--accent-purple); }
   
+  /* Contenedor plano para evitar herencia de viñetas */
   .ln-nav-links { 
     display: flex !important; 
-    gap: 2.5rem !important; 
-    list-style: none !important; 
-    list-style-type: none !important;
+    gap: 1.8rem !important; 
     margin: 0 !important; 
     padding: 0 !important; 
-  }
-  .ln-nav-links li {
-    list-style: none !important;
-    list-style-type: none !important;
-    margin: 0 !important;
-    padding: 0 !important;
+    align-items: center;
   }
   .ln-nav-links a { 
     color: var(--text-muted) !important; 
@@ -81,6 +75,13 @@ permalink: /
     transition: color 0.2s ease; 
   }
   .ln-nav-links a:hover { color: var(--text-main) !important; }
+  
+  /* Separador visual para enlaces externos */
+  .nav-divider {
+    color: var(--border-color);
+    font-size: 0.9rem;
+    user-select: none;
+  }
 
   /* ==========================================
      HERO SECTION
@@ -302,17 +303,55 @@ permalink: /
     height: 28px;
     border-radius: 4px;
   }
+
+  /* ==========================================
+     BLOQUE 6: SECCIÓN DE CONTACTO
+     ========================================== */
+  .contact-section {
+    padding: 6rem 10%;
+    background-color: var(--bg-primary);
+    text-align: center;
+  }
+  .contact-grid {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    margin-top: 2.5rem;
+  }
+  .contact-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.8rem 1.5rem;
+    border-radius: 6px;
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 0.95rem;
+    border: 1px solid var(--border-color);
+    color: var(--text-main) !important;
+    background-color: var(--bg-secondary);
+    transition: background-color 0.2s, border-color 0.2s;
+  }
+  .contact-btn:hover {
+    background-color: #21262d;
+    border-color: #8b949e;
+  }
 </style>
 
-<!-- Barra de Navegación Premium -->
+<!-- Barra de Navegación Premium Corregida -->
 <nav class="ln-navbar">
   <a href="/" class="ln-brand">alejandro<span>bepmale</span></a>
-  <ul class="ln-nav-links">
-    <li><a href="/">Inicio</a></li>
-    <li><a href="/infraestructura">Infraestructura</a></li>
-    <li><a href="/ciberseguridad">Ciberseguridad</a></li>
-    <li><a href="#contacto">Contacto</a></li>
-  </ul>
+  <div class="ln-nav-links">
+    <a href="/">Inicio</a>
+    <a href="/infraestructura">Infraestructura</a>
+    <a href="/ciberseguridad">Ciberseguridad</a>
+    <a href="#contacto">Contacto</a>
+    <span class="nav-divider">|</span>
+    <a href="https://www.linkedin.com/in/alejandrobepmale" target="_blank">LinkedIn</a>
+    <a href="https://www.upwork.com" target="_blank">Upwork</a>
+    <a href="https://www.workana.com" target="_blank">Workana</a>
+  </div>
 </nav>
 
 <!-- Bloque 1: Hero Section -->
@@ -374,7 +413,6 @@ permalink: /
   <p class="section-subtitle">Herramientas y tecnologías integradas para el diseño de soluciones robustas y seguras.</p>
   
   <div class="tech-grid">
-    <!-- Categoría 1 -->
     <div class="tech-category">
       <h3>Infraestructura & Cloud</h3>
       <div class="tech-badges-container">
@@ -386,7 +424,6 @@ permalink: /
       </div>
     </div>
 
-    <!-- Categoría 2 -->
     <div class="tech-category">
       <h3>Automatización</h3>
       <div class="tech-badges-container">
@@ -396,7 +433,6 @@ permalink: /
       </div>
     </div>
 
-    <!-- Categoría 3 -->
     <div class="tech-category">
       <h3>Scripting & Desarrollo</h3>
       <div class="tech-badges-container">
@@ -408,7 +444,6 @@ permalink: /
       </div>
     </div>
 
-    <!-- Categoría 4 -->
     <div class="tech-category">
       <h3>Monitoreo & Seguridad</h3>
       <div class="tech-badges-container">
@@ -417,5 +452,19 @@ permalink: /
         <img src="https://img.shields.io/badge/Shodan-212121?style=flat-square&logo=shodan&logoColor=white" alt="Shodan">
       </div>
     </div>
+  </div>
+</section>
+
+<!-- Bloque 6: Sección de Contacto -->
+<section id="contacto" class="contact-section">
+  <h2 class="section-title">¿Hablamos de tu próximo proyecto?</h2>
+  <p class="section-subtitle">Ya sea para integraciones complejas, auditorías de seguridad o estabilidad de infraestructura, escríbeme directamente.</p>
+  
+  <div class="contact-grid">
+    <a href="mailto:contacto@alejandrobepmale.com" class="contact-btn">✉️ contacto@alejandrobepmale.com</a>
+    <a href="https://www.linkedin.com/in/alejandrobepmale" target="_blank" class="contact-btn">🔗 LinkedIn</a>
+    <a href="https://www.upwork.com" target="_blank" class="contact-btn">🚀 Upwork Profile</a>
+    <a href="https://www.workana.com" target="_blank" class="contact-btn">💼 Workana Profile</a>
+    <a href="https://github.com/alejandrobepmale" target="_blank" class="contact-btn">🐙 GitHub</a>
   </div>
 </section>
