@@ -1,18 +1,35 @@
 <style>
   /* ==========================================
-     1. RESET GLOBAL Y ELIMINACIÓN DE CABECERAS DEL TEMA
+     1. RESET TOTAL DE MÁRGENES (ELIMINA LA FRANJA BLANCA)
      ========================================== */
-  /* Pulverizamos por completo la barra blanca nativa, el buscador del tema y el footer */
+  html, body {
+    margin: 0 !important;
+    padding: 0 !important;
+    border: none !important;
+    box-shadow: none !important;
+    background-color: #0d1117 !important;
+  }
+
+  /* Ocultamos las cabeceras e índices automáticos y molestos del tema */
   .main-header, .site-header, .site-footer, .search-placeholder, .search { 
     display: none !important; 
   }
   
-  .main, .main-content, .main-content-wrap { 
+  /* Ajustamos el lienzo de contenido al 100% de la pantalla */
+  .main, .main-content { 
     margin: 0 !important; 
     padding: 0 !important; 
     max-width: 100% !important; 
     width: 100% !important;
     background-color: #0d1117 !important; 
+  }
+  
+  /* Agregamos un colchón de lectura premium para las páginas de documentación internas */
+  .main-content-wrap {
+    margin: 0 !important;
+    padding: 4rem 8% !important; /* Espaciado elegante para que el texto respire */
+    max-width: 100% !important;
+    width: 100% !important;
   }
   
   .main-content {
@@ -95,10 +112,10 @@
   .nav-workana:hover { color: #00bcd4 !important; }
 
   /* ==========================================
-     3. HERO SECTION
+     3. HERO SECTION (COMPENSACIÓN DE NAVBAR)
      ========================================== */
   .ln-hero {
-    padding: 7rem 10% 6rem 10%;
+    padding: 5rem 10% 6rem 10%;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -421,14 +438,13 @@
   .contact-btn-email:hover { background-color: #161b22; border-color: #ea4335; color: #ea4335 !important; transform: translateY(-2px); }
 
   /* ==========================================
-     9. REDISEÑO TOTAL DEL SIDEBAR (MATE, PLANO Y SIN GRADIENTES)
+     9. REDISEÑO DEL SIDEBAR
      ========================================== */
   .side-bar {
     background-color: #161b22 !important;
     border-right: 1px solid #30363d !important;
   }
   
-  /* Destruimos el bloque de gradiente púrpura/blanco de selección por defecto */
   .nav-list-item.active, .nav-list-item {
     background: none !important;
     background-image: none !important;
@@ -436,7 +452,6 @@
   
   .site-title { color: #f0f6fc !important; font-weight: 700 !important; }
   
-  /* Enlaces del sidebar base */
   .nav-list-link { 
     color: #8b949e !important; 
     background: none !important;
@@ -448,7 +463,6 @@
     background-color: #21262d !important;
   }
   
-  /* Indicador Activo Limpio: Fondo plano oscuro + Fina línea de acento púrpura a la izquierda */
   .nav-list-link.active, .nav-list-item.active > .nav-list-link {
     color: #f0f6fc !important;
     background-color: #21262d !important;
@@ -462,6 +476,5 @@
       margin-left: 290px !important; 
       max-width: calc(100% - 290px) !important; 
     }
-    .main-content-wrap { padding-top: 2rem !important; }
   }
 </style>
