@@ -261,6 +261,47 @@ permalink: /
     color: var(--text-muted);
     margin-bottom: 1.8rem !important;
   }
+
+  /* ==========================================
+     BLOQUE 4: ECOSISTEMA TECNOLÓGICO (TECH STACK)
+     ========================================== */
+  .tech-section {
+    padding: 6rem 10%;
+    background-color: var(--bg-secondary);
+    border-bottom: 1px solid var(--border-color);
+  }
+  .tech-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem;
+    margin-top: 3rem;
+  }
+  .tech-category {
+    background-color: var(--bg-primary);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 1.8rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+  .tech-category h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #58a6ff !important;
+    margin: 0 !important;
+    padding-bottom: 0.6rem;
+    border-bottom: 1px solid var(--border-color);
+  }
+  .tech-badges-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+  }
+  .tech-badges-container img {
+    height: 28px;
+    border-radius: 4px;
+  }
 </style>
 
 <!-- Barra de Navegación Premium -->
@@ -324,5 +365,57 @@ permalink: /
     <h2>Migración crítica de datos masivos sobre hardware degradado</h2>
     <p>Diseño e implementación de un motor de automatización bajo demanda mediante scripts avanzados para la sincronización de grandes volúmenes de información corporativa. Ante la inestabilidad de la red y fallas de hardware físico de dispositivos de almacenamiento tradicionales, se estructuró una solución de bajo nivel con tolerancia a fallas capaz de gestionar reintentos automáticos, mitigar el estrés de lectura/escritura y garantizar la integridad total de la data sin interrupciones operativas.</p>
     <a href="/infraestructura" class="btn-ln btn-outline">Ver Detalles Técnicos</a>
+  </div>
+</section>
+
+<!-- Bloque 4: Ecosistema Tecnológico (Tech Stack) -->
+<section id="tecnologias" class="tech-section">
+  <h2 class="section-title">Ecosistema Tecnológico</h2>
+  <p class="section-subtitle">Herramientas y tecnologías integradas para el diseño de soluciones robustas y seguras.</p>
+  
+  <div class="tech-grid">
+    <!-- Categoría 1 -->
+    <div class="tech-category">
+      <h3>Infraestructura & Cloud</h3>
+      <div class="tech-badges-container">
+        <img src="https://img.shields.io/badge/VMware_ESXi-6151B1?style=flat-square&logo=vmware&logoColor=white" alt="VMware">
+        <img src="https://img.shields.io/badge/Citrix_LTSR-00A4E4?style=flat-square&logo=citrix&logoColor=white" alt="Citrix">
+        <img src="https://img.shields.io/badge/cPanel_/_WHM-FF6C2C?style=flat-square&logo=cpanel&logoColor=white" alt="cPanel">
+        <img src="https://img.shields.io/badge/Ubuntu_Server-E95420?style=flat-square&logo=ubuntu&logoColor=white" alt="Ubuntu">
+        <img src="https://img.shields.io/badge/Windows_Server-0078D6?style=flat-square&logo=windows&logoColor=white" alt="Windows Server">
+      </div>
+    </div>
+
+    <!-- Categoría 2 -->
+    <div class="tech-category">
+      <h3>Automatización</h3>
+      <div class="tech-badges-container">
+        <img src="https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white" alt="Docker">
+        <img src="https://img.shields.io/badge/Make.com-010101?style=flat-square&logo=make&logoColor=white" alt="Make.com">
+        <img src="https://img.shields.io/badge/WAHA_API-25D366?style=flat-square&logo=whatsapp&logoColor=white" alt="WAHA">
+      </div>
+    </div>
+
+    <!-- Categoría 3 -->
+    <div class="tech-category">
+      <h3>Scripting & Desarrollo</h3>
+      <div class="tech-badges-container">
+        <img src="https://img.shields.io/badge/PowerShell-5391FE?style=flat-square&logo=powershell&logoColor=white" alt="PowerShell">
+        <img src="https://img.shields.io/badge/Bash-4EAA25?style=flat-square&logo=gnu-bash&logoColor=white" alt="Bash">
+        <img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white" alt="Python">
+        <img src="https://img.shields.io/badge/SQL_Server-CC2927?style=flat-square&logo=microsoft-sql-server&logoColor=white" alt="SQL Server">
+        <img src="https://img.shields.io/badge/Flutter_/_Dart-02569B?style=flat-square&logo=flutter&logoColor=white" alt="Flutter">
+      </div>
+    </div>
+
+    <!-- Categoría 4 -->
+    <div class="tech-category">
+      <h3>Monitoreo & Seguridad</h3>
+      <div class="tech-badges-container">
+        <img src="https://img.shields.io/badge/Zabbix-CC292F?style=flat-square&logo=zabbix&logoColor=white" alt="Zabbix">
+        <img src="https://img.shields.io/badge/Kali_Linux-557C94?style=flat-square&logo=kali-linux&logoColor=white" alt="Kali Linux">
+        <img src="https://img.shields.io/badge/Shodan-212121?style=flat-square&logo=shodan&logoColor=white" alt="Shodan">
+      </div>
+    </div>
   </div>
 </section>
