@@ -8,6 +8,6 @@ plugins:
   - jekyll-remote-theme
 # Enlaces auxiliares que aparecen arriba a la derecha en la cabecera
 aux_links:
-  "Insertbog": "https://insertbog.cl"
-  "LinkedIn": "https://www.linkedin.com/in/alejandrobepmale"
-  "Mi Web": "https://alejandrobepmale.com"
+  "Inicio": "/"
+  "Infraestructura": "/infraestructura"
+  "Ciberseguridad": "/ciberseguridad"
