@@ -1,0 +1,16 @@
+---
+layout: default
+title: Implementación de Docker Desktop     # Nombre exacto que aparecerá en el Sidebar
+parent: Infraestructura                     # Nombre de la categoría padre (debe coincidir con el archivo principal)
+nav_order: 1                                # Orden jerárquico dentro de ese submenú
+---
+
+{% include navbar.html %}
+
+# Despliegue y Optimización de Docker Desktop
+
+Aquí comienzas a escribir tu documentación técnica directamente en Markdown estándar. Todo el texto adoptará automáticamente la tipografía, los colores y las proporciones optimizadas del sitio web principal.
+
+## ⚙️ Parámetros de Configuración
+* Detalle 1...
+* Detalle 2...
