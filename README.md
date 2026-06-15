@@ -4,8 +4,9 @@ title: Inicio
 nav_order: 1
 permalink: /
 ---
+
 <style>
-  /* Mantenemos el sidebar completamente oculto ÚNICAMENTE en la Landing de Bienvenida */
+  /* Ocultamos el sidebar única y exclusivamente en la Landing Page */
   .side-bar { display: none !important; }
   @media (min-width: 64rem) {
     .main { margin-left: 0 !important; max-width: 100% !important; }
@@ -156,19 +157,18 @@ permalink: /
   <h2 class="section-title">¿Hablamos de tu próximo proyecto?</h2>
   <p class="section-subtitle">Ya sea para estabilidad de infraestructura, auditorías de seguridad o integraciones complejas, conéctame por cualquiera de mis canales oficiales.</p>
   
-  <!-- Fila Superior: Redes Sociales Estilo Cuadrado Limpio (image_859dd8.png) -->
   <div class="contact-social-row">
     <!-- LinkedIn -->
     <a href="https://www.linkedin.com/in/alejandrobepmale" target="_blank" class="contact-icon-card card-linkedin" title="Ver Perfil de LinkedIn">
       <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
     </a>
     
-    <!-- Upwork (Monograma Limpio) -->
+    <!-- Upwork -->
     <a href="https://www.upwork.com" target="_blank" class="contact-icon-card card-upwork" title="Ver Perfil de Upwork">
       <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.35 5.63c-2.31 0-4.14 1.56-4.82 3.82l-.17.62-.57-2.38C11.12 4.96 8.79 3 6.14 3 2.75 3 0 5.75 0 9.14v5.73h2.72V9.14c0-1.88 1.53-3.42 3.42-3.42 1.67 0 3.09 1.2 3.38 2.84l.91 3.81H7.71v2.72h5.44l.21.87c.59 2.46 2.5 3.99 5.01 3.99 3.47 0 6.29-2.82 6.29-6.29 0-3.47-2.82-6.29-6.29-6.29zm1 9.87c-1.39 0-2.38-.81-2.73-2.12l-.31-1.26c.55-1.48 1.68-2.45 3.04-2.45 1.97 0 3.57 1.6 3.57 3.57 0 1.97-1.6 3.57-3.57 3.57z"/></svg>
     </a>
     
-    <!-- Workana (Monograma Circular Corporativo) -->
+    <!-- Workana -->
     <a href="https://www.workana.com" target="_blank" class="contact-icon-card card-workana" title="Ver Perfil de Workana">
       <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm-1.071 15.6H8.25l-2.073-6h1.76l1.247 4.14 1.207-4.14h1.74l-2.002 6z"/></svg>
     </a>
@@ -179,7 +179,6 @@ permalink: /
     </a>
   </div>
 
-  <!-- Fila Inferior: Botón de Correo Corporativo Solitario y Centrado -->
   <div class="contact-email-row">
     <a href="mailto:contacto@alejandrobepmale.com" class="contact-btn-email" title="Enviar un Correo Electrónico">
       <svg viewBox="0 0 24 24" fill="currentColor" style="width: 20px; height: 20px; margin-right: 10px;"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
