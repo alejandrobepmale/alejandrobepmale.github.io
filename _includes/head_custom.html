@@ -1,35 +1,25 @@
 <style>
   /* ==========================================
-     1. RESET TOTAL DE MÁRGENES (ELIMINA LA FRANJA BLANCA)
+     1. RESET TOTAL DE MÁRGENES (LIENZO EDGETO-EDGE)
      ========================================== */
   html, body {
     margin: 0 !important;
     padding: 0 !important;
-    border: none !important;
-    box-shadow: none !important;
     background-color: #0d1117 !important;
   }
 
-  /* Ocultamos las cabeceras e índices automáticos y molestos del tema */
+  /* Ocultamos las cabeceras duplicadas y barras de búsqueda nativas del tema */
   .main-header, .site-header, .site-footer, .search-placeholder, .search { 
     display: none !important; 
   }
   
-  /* Ajustamos el lienzo de contenido al 100% de la pantalla */
-  .main, .main-content { 
+  /* Forzamos a que el contenedor principal ocupe todo el ancho disponible */
+  .main, .main-content, .main-content-wrap { 
     margin: 0 !important; 
     padding: 0 !important; 
     max-width: 100% !important; 
     width: 100% !important;
     background-color: #0d1117 !important; 
-  }
-  
-  /* Agregamos un colchón de lectura premium para las páginas de documentación internas */
-  .main-content-wrap {
-    margin: 0 !important;
-    padding: 4rem 8% !important; /* Espaciado elegante para que el texto respire */
-    max-width: 100% !important;
-    width: 100% !important;
   }
   
   .main-content {
@@ -52,28 +42,44 @@
   a { color: #58a6ff; }
 
   /* ==========================================
-     2. NAVBAR SUPERIOR GLOBAL
+     2. COLCHÓN ELEGANTE DE LECTURA (SOLO PARA EL CONTENIDO)
+     ========================================== */
+  /* El navbar irá al 100%, pero los textos, listas y tablas de tus guías mantendrán este margen ordenado */
+  .main-content > h1, 
+  .main-content > h2, 
+  .main-content > h3, 
+  .main-content > p, 
+  .main-content > ul, 
+  .main-content > ol, 
+  .main-content > table,
+  .main-content > .table-wrapper,
+  .main-content > div:not(.ln-navbar) {
+    padding-left: 8% !important;
+    padding-right: 8% !important;
+    box-sizing: border-box;
+  }
+  
+  .main-content > h1:first-of-type {
+    margin-top: 3.5rem !important;
+  }
+
+  /* ==========================================
+     3. NAVBAR SUPERIOR INTERNO (LIMPIO Y SIN MARGENES)
      ========================================== */
   .ln-navbar {
     background-color: rgba(22, 27, 34, 0.95);
     backdrop-filter: blur(10px);
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end; /* Empuja todo el menú limpiamente hacia la derecha */
     align-items: center;
-    padding: 1.2rem 10%;
+    padding: 1.2rem 8%;
     position: sticky;
     top: 0;
     z-index: 1000;
     border-bottom: 1px solid var(--border-color);
+    box-sizing: border-box;
+    width: 100% !important;
   }
-  .ln-brand {
-    color: var(--text-main) !important;
-    font-weight: 700;
-    font-size: 1.4rem;
-    text-decoration: none;
-    letter-spacing: -0.5px;
-  }
-  .ln-brand span { color: var(--accent-purple); }
   
   .ln-nav-links { 
     display: flex !important; 
@@ -112,357 +118,48 @@
   .nav-workana:hover { color: #00bcd4 !important; }
 
   /* ==========================================
-     3. HERO SECTION (COMPENSACIÓN DE NAVBAR)
-     ========================================== */
-  .ln-hero {
-    padding: 5rem 10% 6rem 10%;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-    background: radial-gradient(circle at 90% 10%, rgba(137, 87, 229, 0.08) 0%, transparent 40%),
-                radial-gradient(circle at 10% 90%, rgba(31, 111, 235, 0.05) 0%, transparent 50%);
-    border-bottom: 1px solid var(--border-color);
-  }
-  .ln-hero-tag {
-    background-color: rgba(137, 87, 229, 0.15);
-    color: #d2a8ff;
-    padding: 0.4rem 1rem;
-    border-radius: 20px;
-    font-size: 0.85rem;
-    font-weight: 600;
-    margin-bottom: 1.5rem;
-    border: 1px solid rgba(137, 87, 229, 0.3);
-  }
-  .ln-hero h1 {
-    font-size: 3.2rem;
-    font-weight: 800;
-    color: var(--text-main) !important;
-    line-height: 1.15;
-    margin: 0 0 1rem 0 !important;
-    letter-spacing: -1px;
-  }
-  .ln-hero h2 {
-    font-size: 1.8rem;
-    font-weight: 600;
-    color: #58a6ff !important;
-    margin: 0 0 1.5rem 0 !important;
-  }
-  .ln-hero p {
-    font-size: 1.15rem;
-    line-height: 1.6;
-    color: var(--text-muted);
-    max-width: 750px;
-    margin: 0 0 2.5rem 0 !important;
-  }
-  .ln-hero-buttons { display: flex; gap: 1rem; flex-wrap: wrap; }
-  .btn-ln {
-    padding: 0.8rem 1.8rem;
-    border-radius: 6px;
-    font-weight: 600;
-    font-size: 0.95rem;
-    text-decoration: none;
-    transition: transform 0.2s ease, filter 0.2s ease;
-  }
-  .btn-ln:hover { transform: translateY(-2px); filter: brightness(1.1); }
-  .btn-purple { background-color: var(--accent-purple); color: #fff !important; }
-  .btn-outline { border: 1px solid var(--border-color); color: var(--text-main) !important; background-color: transparent; }
-
-  /* ==========================================
-     4. GRID DE SERVICIOS
-     ========================================== */
-  .services-section {
-    padding: 6rem 10%;
-    background-color: var(--bg-secondary);
-    border-bottom: 1px solid var(--border-color);
-  }
-  .section-title {
-    font-size: 2rem;
-    font-weight: 700;
-    color: var(--text-main) !important;
-    margin-bottom: 0.5rem !important;
-  }
-  .section-subtitle {
-    font-size: 1rem;
-    color: var(--text-muted);
-    margin-bottom: 3.5rem !important;
-  }
-  .services-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-  }
-  .service-card {
-    background-color: var(--bg-primary);
-    border: 1px solid var(--border-color);
-    border-radius: 8px;
-    padding: 2.5rem 2rem;
-    transition: border-color 0.3s ease, transform 0.3s ease;
-  }
-  .service-card:hover {
-    border-color: #444c56;
-    transform: translateY(-4px);
-  }
-  .service-icon {
-    font-size: 2rem;
-    margin-bottom: 1.2rem;
-    display: inline-block;
-  }
-  .service-card h3 {
-    font-size: 1.35rem;
-    font-weight: 600;
-    color: var(--text-main) !important;
-    margin: 0 0 0.8rem 0 !important;
-  }
-  .service-card p {
-    font-size: 0.95rem;
-    line-height: 1.6;
-    color: var(--text-muted);
-    margin: 0 !important;
-  }
-
-  /* ==========================================
-     5. BANNER DE IMPACTO / CASO DE ÉXITO
-     ========================================== */
-  .impact-section {
-    padding: 6rem 10%;
-    background-color: var(--bg-primary);
-    border-bottom: 1px solid var(--border-color);
-    display: flex;
-    align-items: center;
-    gap: 4rem;
-    flex-wrap: wrap;
-  }
-  .impact-metric {
-    flex: 1;
-    min-width: 280px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background: radial-gradient(circle at center, rgba(31, 111, 235, 0.1) 0%, transparent 70%);
-    border: 1px solid rgba(56, 139, 253, 0.2);
-    border-radius: 12px;
-    padding: 3.5rem 2rem;
-    text-align: center;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
-  }
-  .impact-number {
-    font-size: 4.5rem;
-    font-weight: 800;
-    color: #58a6ff;
-    line-height: 1;
-    margin-bottom: 0.5rem;
-    letter-spacing: -1px;
-  }
-  .impact-label {
-    font-size: 0.9rem;
-    font-weight: 700;
-    color: var(--text-main);
-    text-transform: uppercase;
-    letter-spacing: 2px;
-  }
-  .impact-content {
-    flex: 2;
-    min-width: 320px;
-  }
-  .impact-badge {
-    background-color: rgba(56, 139, 253, 0.15);
-    color: #58a6ff;
-    padding: 0.3rem 0.8rem;
-    border-radius: 20px;
-    font-size: 0.8rem;
-    font-weight: 600;
-    margin-bottom: 1.2rem;
-    display: inline-block;
-    border: 1px solid rgba(56, 139, 253, 0.2);
-  }
-  .impact-content h2 {
-    font-size: 2.2rem;
-    font-weight: 700;
-    color: var(--text-main) !important;
-    margin: 0 0 1.2rem 0 !important;
-    line-height: 1.2;
-  }
-  .impact-content p {
-    font-size: 1.05rem;
-    line-height: 1.6;
-    color: var(--text-muted);
-    margin-bottom: 1.8rem !important;
-  }
-
-  /* ==========================================
-     6. ECOSISTEMA TECNOLÓGICO
-     ========================================== */
-  .tech-section {
-    padding: 6rem 10%;
-    background-color: var(--bg-secondary);
-    border-bottom: 1px solid var(--border-color);
-  }
-  .tech-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 1.5rem;
-    margin-top: 3rem;
-  }
-  .tech-category {
-    background-color: var(--bg-primary);
-    border: 1px solid var(--border-color);
-    border-radius: 8px;
-    padding: 1.8rem;
-    display: flex;
-    flex-direction: column;
-    gap: 1.2rem;
-  }
-  .tech-category h3 {
-    font-size: 1.1rem;
-    font-weight: 600;
-    color: #58a6ff !important;
-    margin: 0 !important;
-    padding-bottom: 0.6rem;
-    border-bottom: 1px solid var(--border-color);
-  }
-  .tech-badges-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.6rem;
-  }
-  .tech-badges-container img {
-    height: 28px;
-    border-radius: 4px;
-  }
-
-  /* ==========================================
-     7. FILOSOFÍA DE TRABAJO
-     ========================================== */
-  .about-section {
-    padding: 6rem 10%;
-    background-color: var(--bg-primary);
-    border-bottom: 1px solid var(--border-color);
-  }
-  .about-container {
-    display: flex;
-    align-items: center;
-    gap: 4rem;
-    flex-wrap: wrap;
-  }
-  .about-content {
-    flex: 1.2;
-    min-width: 320px;
-  }
-  .about-card {
-    flex: 0.8;
-    min-width: 280px;
-    background-color: var(--bg-secondary);
-    border: 1px solid var(--border-color);
-    border-radius: 8px;
-    padding: 2.5rem;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
-  }
-  .about-card h4 {
-    color: #d2a8ff !important;
-    margin: 0 0 1.2rem 0 !important;
-    font-size: 1.1rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    font-weight: 700;
-  }
-  .about-features {
-    display: flex;
-    flex-direction: column;
-    gap: 1.2rem;
-  }
-  .about-item {
-    font-size: 0.95rem;
-    line-height: 1.5;
-    color: var(--text-muted);
-  }
-  .about-item strong {
-    color: var(--text-main);
-    display: block;
-    font-size: 1rem;
-    margin-bottom: 0.2rem;
-  }
-
-  /* ==========================================
-     8. SECCIÓN DE CONTACTO
-     ========================================== */
-  .contact-section {
-    padding: 6rem 10%;
-    background-color: var(--bg-secondary);
-    text-align: center;
-  }
-  .contact-social-row {
-    display: flex;
-    justify-content: center;
-    gap: 1.2rem;
-    flex-wrap: wrap;
-    margin-top: 3.5rem;
-    margin-bottom: 2.5rem;
-  }
-  .contact-icon-card {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 75px;
-    height: 75px;
-    border-radius: 14px;
-    border: 1px solid var(--border-color);
-    background-color: #11141a;
-    color: #8b949e !important;
-    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-  }
-  .contact-icon-card svg { width: 28px; height: 28px; }
-  .contact-icon-card:hover { transform: translateY(-4px); background-color: #161b22; }
-  
-  .card-linkedin:hover { border-color: #0077b5; color: #0077b5 !important; }
-  .card-upwork:hover { border-color: #14a800; color: #14a800 !important; }
-  .card-workana:hover { border-color: #00bcd4; color: #00bcd4 !important; }
-  .card-github:hover { border-color: #8957e5; color: #8957e5 !important; }
-
-  .contact-email-row { display: flex; justify-content: center; width: 100%; }
-  .contact-btn-email {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0.9rem 2.2rem;
-    border-radius: 6px;
-    font-weight: 600;
-    text-decoration: none;
-    font-size: 1rem;
-    border: 1px solid var(--border-color);
-    color: var(--text-main) !important;
-    background-color: #11141a;
-    transition: all 0.25s ease;
-  }
-  .contact-btn-email:hover { background-color: #161b22; border-color: #ea4335; color: #ea4335 !important; transform: translateY(-2px); }
-
-  /* ==========================================
-     9. REDISEÑO DEL SIDEBAR
+     4. DISEÑO DEL SIDEBAR Y LOGO INTEGRADO EN EL TOP
      ========================================== */
   .side-bar {
     background-color: #161b22 !important;
     border-right: 1px solid #30363d !important;
   }
   
-  .nav-list-item.active, .nav-list-item {
-    background: none !important;
-    background-image: none !important;
+  /* Inyección de marca avanzada en el tope del Sidebar (Reemplaza el texto plano del tema) */
+  .site-title {
+    font-size: 0 !important; /* Ocultamos el título de configuración genérico */
+    padding: 2rem 2rem 1rem 2rem !important;
+    display: block !important;
+    text-decoration: none !important;
+    border: none !important;
+  }
+  .site-title::before {
+    content: "alejandro" !important;
+    font-size: 1.4rem !important;
+    font-weight: 700 !important;
+    color: var(--text-main) !important;
+    letter-spacing: -0.5px !important;
+    text-transform: lowercase !important;
+  }
+  .site-title::after {
+    content: "bepmale" !important;
+    font-size: 1.4rem !important;
+    font-weight: 700 !important;
+    color: var(--accent-purple) !important;
+    letter-spacing: -0.5px !important;
+    text-transform: lowercase !important;
   }
   
-  .site-title { color: #f0f6fc !important; font-weight: 700 !important; }
-  
+  /* Reset de botones activos del Sidebar */
+  .nav-list-item.active, .nav-list-item { background: none !important; background-image: none !important; }
   .nav-list-link { 
     color: #8b949e !important; 
     background: none !important;
     border-left: 3px solid transparent !important;
     transition: all 0.2s ease !important;
+    padding-left: 2rem !important;
   }
-  .nav-list-link:hover {
-    color: #f0f6fc !important;
-    background-color: #21262d !important;
-  }
-  
+  .nav-list-link:hover { color: #f0f6fc !important; background-color: #21262d !important; }
   .nav-list-link.active, .nav-list-item.active > .nav-list-link {
     color: #f0f6fc !important;
     background-color: #21262d !important;
@@ -477,4 +174,6 @@
       max-width: calc(100% - 290px) !important; 
     }
   }
+
+  /* (Conserva aquí abajo los bloques de estilos CSS .ln-hero, .services-section, etc., que usamos en tu README.md de inicio) */
 </style>
