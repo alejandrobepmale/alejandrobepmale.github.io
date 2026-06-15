@@ -1,3 +1,9 @@
+---
+layout: default
+title: Inicio
+nav_order: 1
+permalink: /
+---
 # ¡Hola! Soy Alejandro Bepmale
 ## Consultor TI & Especialista en Infraestructura y Automatización
 
