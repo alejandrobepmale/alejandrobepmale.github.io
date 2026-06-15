@@ -1,0 +1,8 @@
+title: Alejandro Bepmale
+description: Consultor TI & Especialista en Infraestructura y Automatización
+
+# Activamos el tema Just the Docs mediante el plugin remoto compatible con GitHub Pages
+remote_theme: just-the-docs/just-the-docs
+
+plugins:
+  - jekyll-remote-theme
