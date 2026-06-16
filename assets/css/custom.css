@@ -3,6 +3,11 @@
 /* ==========================================
    1. RESET TOTAL Y COLORES
    ========================================== */
+/* Ocultamos las cabeceras duplicadas y barras de búsqueda nativas del tema */
+.main-header, .site-header, .site-footer, .search-placeholder, .search { 
+  display: none !important; 
+}
+
 html, body {
   margin: 0 !important;
   padding: 0 !important;
