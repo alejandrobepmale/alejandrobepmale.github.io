@@ -1,8 +1,2 @@
 title: Integración y Automatización Web | Aliado Digital
 description: Especialista en desarrollo web de alto valor, ecosistemas de automatización, hosting avanzado y despliegues con Docker, Make.com y WAHA.
-
-# Activamos el tema Just the Docs mediante el plugin remoto compatible con GitHub Pages
-remote_theme: just-the-docs/just-the-docs
-
-plugins:
-  - jekyll-remote-theme
