@@ -1,48 +1,93 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" class="dark">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{ page.title }} | {{ site.title }}</title>
   <meta name="description" content="{{ page.description | default: site.description }}">
-  <link rel="stylesheet" href="{{ '/assets/css/custom.css' | relative_url }}">
+  
+  <!-- Tailwind CSS CDN con Plugin Typography -->
+  <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+  
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              purple: '#8957e5',
+              blue: '#58a6ff'
+            }
+          }
+        }
+      }
+    }
+  </script>
+  
+  <script>
+    // Inicializar el tema basado en localStorage
+    if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+
+    function toggleTheme() {
+      if (document.documentElement.classList.contains('dark')) {
+        document.documentElement.classList.remove('dark');
+        localStorage.theme = 'light';
+      } else {
+        document.documentElement.classList.add('dark');
+        localStorage.theme = 'dark';
+      }
+    }
+  </script>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
-<body class="{% if page.url == '/' %}page-home{% else %}page-inner{% endif %}">
+<body class="bg-gray-50 text-gray-900 dark:bg-[#0d1117] dark:text-gray-100 transition-colors duration-300 antialiased min-h-screen flex flex-col">
 
-  <!-- El navbar siempre arriba, como pidió el usuario -->
   {% include navbar.html %}
 
-  <div class="layout-wrapper">
-    <!-- El sidebar solo se muestra si NO estamos en la landing (index.html) -->
+  <div class="flex-grow flex flex-col md:flex-row w-full max-w-7xl mx-auto">
+    
     {% if page.url != '/' %}
-    <aside class="sidebar">
-      <h3 class="sidebar-title">Contenido</h3>
-      <ul class="sidebar-nav">
-        <li class="nav-section">Infraestructura</li>
-        <li><a href="/infraestructura">Casos de Estudio</a></li>
-        <li><a href="/docker-desktop.html">Docker Desktop</a></li>
+    <!-- Sidebar solo visible en subpáginas -->
+    <aside class="w-full md:w-72 flex-shrink-0 border-b md:border-b-0 md:border-r border-gray-200 dark:border-gray-800 p-6 md:py-10">
+      <h3 class="text-xs font-bold uppercase tracking-wider text-gray-500 mb-4">Documentación</h3>
+      <nav class="space-y-1">
+        <div class="text-sm font-semibold text-gray-900 dark:text-gray-100 mt-4 mb-2">Infraestructura</div>
+        <a href="/infraestructura" class="block px-3 py-2 text-sm rounded-md text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">Casos de Estudio</a>
+        <a href="/docker-desktop.html" class="block px-3 py-2 text-sm rounded-md text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">Docker Desktop</a>
         
-        <li class="nav-section mt-4">Ciberseguridad</li>
-        <li><a href="/ciberseguridad">Auditorías y Logs</a></li>
-        <li><a href="/ngrok-control-remoto.html">Ngrok Control Remoto</a></li>
-      </ul>
+        <div class="text-sm font-semibold text-gray-900 dark:text-gray-100 mt-6 mb-2">Ciberseguridad</div>
+        <a href="/ciberseguridad" class="block px-3 py-2 text-sm rounded-md text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">Auditorías y Logs</a>
+        <a href="/ngrok-control-remoto.html" class="block px-3 py-2 text-sm rounded-md text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">Ngrok Control Remoto</a>
+      </nav>
     </aside>
     {% endif %}
 
-    <!-- El contenido principal de cada archivo Markdown/HTML caerá aquí -->
-    <main class="main-content {% if page.url == '/' %}main-home{% endif %}">
+    <main class="flex-grow w-full p-6 md:p-10 lg:p-12">
       {% if page.url == '/' %}
         {{ content }}
       {% else %}
-        <div class="content-container">
+        <!-- Magia del plugin typography de Tailwind: estiliza todo el Markdown automático -->
+        <div class="prose prose-lg dark:prose-invert max-w-4xl mx-auto prose-a:text-brand-blue hover:prose-a:text-brand-purple">
           {{ content }}
         </div>
       {% endif %}
     </main>
   </div>
+
+  <footer class="border-t border-gray-200 dark:border-gray-800 py-8 text-center text-gray-500 dark:text-gray-400 text-sm mt-auto">
+    &copy; 2026 alejandrobepmale. Aliado Digital.
+  </footer>
 
 </body>
 </html>
