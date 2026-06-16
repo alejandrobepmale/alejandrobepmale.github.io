@@ -33,10 +33,14 @@
     {% endif %}
 
     <!-- El contenido principal de cada archivo Markdown/HTML caerá aquí -->
-    <main class="main-content">
-      <div class="content-container">
+    <main class="main-content {% if page.url == '/' %}main-home{% endif %}">
+      {% if page.url == '/' %}
         {{ content }}
-      </div>
+      {% else %}
+        <div class="content-container">
+          {{ content }}
+        </div>
+      {% endif %}
     </main>
   </div>
 
