@@ -1,0 +1,44 @@
+---
+layout: default
+title: Guía de Recuperación: Archivos Ocultos por Sistema (attrib)
+parent: Infraestructura
+nav_order: 1
+---
+
+# 📑 Guía de Recuperación: Archivos Ocultos por Sistema (attrib)
+
+Este procedimiento se utiliza cuando los archivos ocupan espacio en el disco y se puede acceder a ellos escribiendo la ruta manual, pero el Explorador de Windows no los muestra en la lista.
+
+## 1. Diagnóstico por Consola (CMD o PowerShell)
+
+Para verificar la existencia de carpetas ocultas antes de aplicar cambios, nos situamos en el directorio y listamos el contenido:
+
+- **Comando:** `dir /a` (en CMD) o `ls -Force` (en PowerShell).
+
+## 2. Desocultar la Carpeta Raíz (Acción Inmediata)
+
+Si la carpeta principal está protegida como archivo de sistema, no dejará ver nada de su interior. Quitamos los atributos ocultos (`-h`) y de sistema (`-s`) directamente a la carpeta madre:
+
+```cmd
+attrib -h -s "I:\Respaldo"
+```
+
+*(Nota: Asegurar la ortografía exacta de la ruta para evitar el error "No se encuentra el archivo").*
+
+## 3. Desocultar Contenido de Primer Nivel (Evita congelamientos)
+
+Para discos muy grandes (ej. 2 TB), ejecutar el comando recursivo (`/s`) puede demorar horas o congelar la consola. La mejor práctica es desocultar **solo el primer nivel de carpetas** para trabajar de inmediato:
+
+```cmd
+cd Respaldo
+attrib -h -r -s /d *
+```
+
+## 4. Glosario de Parámetros Utilizados
+
+- `attrib`: Herramienta de Windows para modificar los atributos de archivos y carpetas.
+- `-h`: Quita el atributo de **Oculto** (Hidden).
+- `-s`: Quita el atributo de **Sistema** (System) que bloquea la visibilidad total.
+- `-r`: Quita el atributo de **Solo Lectura** (Read-only) para poder modificar el contenido.
+- `/d`: Aplica el comando a las **carpetas** y directorios (no solo a los archivos individuales).
+- `*`: Comodín que indica "aplicar a **todo** el contenido actual".
